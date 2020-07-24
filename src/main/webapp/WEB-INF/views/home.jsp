@@ -1,6 +1,4 @@
 
-
-
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -91,9 +89,9 @@
 <div class="jumbotron ">
 
   <h3 style="text-align:center ;">Sign-up and Solutions provider sends you local job opportunities</h3>
-  <p class="lead" style="text-align:center ;">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Solutions provider puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
+  <p class="lead" style="text-align:left ;">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Solutions provider puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
   <hr class="my-4">
-  <p style="text-align:center ;">All you need to do is sign-up with your work preferences. Then relevant work opportunities in your area will be sent to you. The service is completely free when you are looking for work  the day rate advertised is the rate you get paid.</p>
+  <p style="text-align:left ;">All you need to do is sign-up with your work preferences. Then relevant work opportunities in your area will be sent to you. The service is completely free when you are looking for work  the day rate advertised is the rate you get paid.</p>
  
 </div>
 
@@ -114,7 +112,7 @@
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">2. Receive Quotes</h5>
-      <p class="card-text">Some of these handyman will then get in touch wiht you to give you a quote for the job.</p>
+      <p class="card-text">Some of these handyman will then get in touch with you to give you a quote for the job.</p>
      
     </div>
   </div>
@@ -131,12 +129,15 @@
 
 <!-- Fourth jumboron -->
 
-<h2 style="text-align:center;">Our most popular jobs for handyman</h2>
 
+<!-- 
+<div class="container"> -->
 <div class="jumbotron">
 
+<h2 style="text-align:center;">Our most popular jobs</h2><br><br>
 
-<div class="container">
+
+
   <div class="row">
   <div class="col"><ul>
   <li style="list-style-type: none;">DSTV Specialist</li>
@@ -188,128 +189,142 @@
   <li style="list-style-type: none;">House help</li>
 </ul>
     
-    </div>
+  </div>
+  </div>
   </div>
 
+<div class= "container">
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+     
+     <img src= "static/images/black-boy-on-concrete-wooden-floor.jpg"  class="rounded float-left" width="304" height="236" alt="concrete"> 
+      
+    </div>
+  </div>
+  <div class="card">
+  
+    <div class="card-body">
+      
+      <img src="static/images/barber.jpg" class="rounded float-left"   width="304" height="236" alt="...">
+      
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      
+      <img src="static/images/carpenter.jpg" class="rounded float-left" width="304" height="236" alt="...">
+    </div>
+  </div>
+</div>
 
 </div>
 
-<!-- Fiveth jumboron -->
 
-<div class="jumbotron">
-  
- <div class="container">
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class= "container">
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+     
+     <img src= "static/images/architect-building-construction.jpg"  class="rounded float-left" width="304" height="236" alt="architect-building"> 
+      
+    </div>
   </div>
+  <div class="card">
   
-  
-  
-  
-   </div>
-
-
- <div class="container">
-
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-            <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="card-body">
+      
+      <img src="static/images/electrician.jpg" class="rounded float-left"   width="304" height="236" alt="...">
+      
+    </div>
   </div>
-  
-  
-  
-  
-   </div>
+  <div class="card">
+    
+    <div class="card-body">
+      
+      <img src="static/images/driver.jpg" class="rounded float-left" width="304" height="236" alt="...">
+    </div>
+  </div>
+</div>
+
+</div>
 
 
+
+<div class= "container">
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+     
+     <img src= "static/images/heavyduty.jpg"  class="rounded float-left" width="304" height="236" alt="concrete"> 
+      
+    </div>
+  </div>
+  <div class="card">
+  
+    <div class="card-body">
+      
+      <img src="static/images/tap.jpg" class="rounded float-left"   width="304" height="236" alt="...">
+      
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      
+      <img src="static/images/tiles.jpg" class="rounded float-left" width="304" height="236" alt="...">
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div class= "container">
+<div class="card-deck">
+  <div class="card">
+    
+    <div class="card-body">
+     
+     <img src= "static/images/animal-dog.jpg"  class="rounded float-left" width="304" height="236" alt="concrete"> 
+      
+    </div>
+  </div>
+  <div class="card">
+  
+    <div class="card-body">
+      
+      <img src="static/images/security.jpg" class="rounded float-left"   width="304" height="236" alt="...">
+      
+    </div>
+  </div>
+  <div class="card">
+    
+    <div class="card-body">
+      
+      <img src="static/images/antenna.jpg" class="rounded float-left" width="304" height="236" alt="...">
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+ 
 <footer class="container">
   <p>&copy; Solutions provider2020</p>
 </footer>

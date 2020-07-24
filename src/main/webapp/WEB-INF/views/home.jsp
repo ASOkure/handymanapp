@@ -131,6 +131,71 @@
 
 <!-- Fourth jumboron -->
 
+<h2 style="text-align:center;">Our most popular jobs for handyman</h2>
+
+<div class="jumbotron">
+
+
+<div class="container">
+  <div class="row">
+  <div class="col"><ul>
+  <li style="list-style-type: none;">DSTV Specialist</li>
+  <li style="list-style-type: none;">Tiler</li>
+  <li style="list-style-type: none;">Bricklayers</li>
+   <li style="list-style-type: none;">Builders</li>
+  <li style="list-style-type: none;">Carpenters and Joiners</li>
+  <li style="list-style-type: none;">Carpet Fitters</li>
+   <li style="list-style-type: none;" >Plumber</li>
+  <li style="list-style-type: none;">Security</li>
+</ul> </div>
+    <div class="col">
+    <ul>
+  <li style="list-style-type: none;">Door Fitters</li>
+  <li style="list-style-type: none;">Drainage Specialist</li>
+  <li style="list-style-type: none;">Electrician</li>
+   <li style="list-style-type: none;">Extension Builders</li>
+  <li style="list-style-type: none;">Architects</li>
+  <li style="list-style-type: none;">Suveyors</li>
+   <li style="list-style-type: none;" >Flooring Fitters</li>
+  <li style="list-style-type: none;">Locksmiths</li>
+</ul>
+    
+    </div>
+    <div class="col">
+    
+    <ul>
+  <li style="list-style-type: none;">Tailor</li>
+  <li style="list-style-type: none;">Barbers</li>
+  <li style="list-style-type: none;">Saloonist</li>
+   <li style="list-style-type: none;">Decorators</li>
+  <li style="list-style-type: none;">Kitchen Fitters</li>
+  <li style="list-style-type: none;">Handymen</li>
+   <li style="list-style-type: none;" >Event planners</li>
+  <li style="list-style-type: none;">Cooks</li>
+</ul>
+    
+    </div>
+    <div class="col">
+    
+    <ul>
+  <li style="list-style-type: none;">Security man</li>
+  <li style="list-style-type: none;">Personal assistant</li>
+  <li style="list-style-type: none;">Painter and Decorator</li>
+   <li style="list-style-type: none;">Plasterers</li>
+  <li style="list-style-type: none;">Roofers</li>
+  <li style="list-style-type: none;">Window Fitters</li>
+   <li style="list-style-type: none;" >Lesson teachers</li>
+  <li style="list-style-type: none;">House help</li>
+</ul>
+    
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Fiveth jumboron -->
+
 <div class="jumbotron">
   
  <div class="container">

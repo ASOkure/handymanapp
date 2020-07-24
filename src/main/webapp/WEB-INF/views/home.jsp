@@ -91,13 +91,45 @@
 <div class="jumbotron ">
 
   <h3 style="text-align:center ;">Sign-up and Solutions provider sends you local job opportunities</h3>
-  <p class="lead" style="text-align:center ;">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Grafter puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
+  <p class="lead" style="text-align:center ;">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Solutions provider puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
   <hr class="my-4">
   <p style="text-align:center ;">All you need to do is sign-up with your work preferences. Then relevant work opportunities in your area will be sent to you. The service is completely free when you are looking for work  the day rate advertised is the rate you get paid.</p>
  
 </div>
 
 <!-- third jumboron -->
+<div class="jumbotron">
+
+<h2 style="text-align:center;"> How to find a handyman</h2>
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">1. Post your job</h5>
+      <p class="card-text">
+      Tell us about the job you want doing and we'll match your job to a local repairer.</p>
+      
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">2. Receive Quotes</h5>
+      <p class="card-text">Some of these handyman will then get in touch wiht you to give you a quote for the job.</p>
+     
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">3. Choose a handyman</h5>
+      <p class="card-text"> Compare quotes and choose your preferred handyman.</p>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Fourth jumboron -->
 
 <div class="jumbotron">
   

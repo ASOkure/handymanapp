@@ -27,6 +27,7 @@
 	
 	}
 	
+
 	</style>
 </head>
 
@@ -88,10 +89,11 @@
 <!-- second jumbotron -->
 
 <div class="jumbotron ">
-  <h3>Sign-up and Solutions provider sends you local job opportunities</h3>
-  <p class="lead">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Grafter puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
+
+  <h3 style="text-align:center ;">Sign-up and Solutions provider sends you local job opportunities</h3>
+  <p class="lead" style="text-align:center ;">Looking for flexible work can be time consuming, but with so many available jobs out there it doesnt need to be. Grafter puts you in touch with local employers with jobs to fill across a range of industries, including construction, landscaping, events, driving, logistics, business and offices.</p>
   <hr class="my-4">
-  <p>All you need to do is sign-up with your work preferences. Then relevant work opportunities in your area will be sent to you. The service is completely free when you are looking for work  the day rate advertised is the rate you get paid.</p>
+  <p style="text-align:center ;">All you need to do is sign-up with your work preferences. Then relevant work opportunities in your area will be sent to you. The service is completely free when you are looking for work  the day rate advertised is the rate you get paid.</p>
  
 </div>
 

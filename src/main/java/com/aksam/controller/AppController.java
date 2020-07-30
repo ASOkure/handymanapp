@@ -14,5 +14,31 @@ public class AppController {
 		}
 
 		
+	
+	@RequestMapping("/quote")
+	public String Quote( ) {
 		
+		
+		return "quote";
+	}
+
+
+	
+	@RequestMapping("/tradeSignUp")
+	public String tradeSignUp( ) {
+		
+		
+		return "tradeSignUp";
+	}
+
+	
+
+	
+	@RequestMapping("/logout")
+	public String Logout( ) {
+		
+		
+		return "logout";
+	}
+
 	}

@@ -1,28 +1,38 @@
+
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 
 <!doctype html>
 <html lang="en">
 
-<head>
+<jsp:include page="../views/templates/header.jsp" />
+
+
+
+
+<!-- <head>
 	
 	<title>Login Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<!-- Reference Bootstrap files -->
+	 Reference Bootstrap files
 	<link rel="stylesheet"
 		 href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	
 	<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+ 
 </head>
-
+ -->
 <body>
 
-	<div>
+
+<div class="container">
+
+
 		
 		<div id="loginbox" style="margin-top: 50px;"
 			class="mainbox col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-2">
@@ -109,5 +119,7 @@
 
 	</div>
 
+ 
 </body>
+<jsp:include page="../views/templates/footer.jsp" />
 </html>

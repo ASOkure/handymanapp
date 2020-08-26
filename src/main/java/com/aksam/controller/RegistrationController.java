@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +21,8 @@ import com.aksam.service.UserService;
 
 
 
-@Controller
-@RequestMapping("/register")
+  @Controller
+ @RequestMapping("/register")
 public class RegistrationController {
 	
     @Autowired
@@ -39,7 +38,7 @@ public class RegistrationController {
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}	
 	
-	@GetMapping("/showRegistrationForm")
+	@RequestMapping("/showRegistrationForm")
 	public String showMyLoginPage(Model theModel) {
 		
 		theModel.addAttribute("applicationUser", new ApplicationUser());

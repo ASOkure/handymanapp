@@ -26,7 +26,6 @@
 	background-size: cover;
 	
 	}
-	
 
 	</style>
 </head>
@@ -144,9 +143,32 @@
 
 </div>
 
-<!-- Fourth jumboron -->
-
-
+<!--cards columns-->
+<div class="container">
+  
+  <div class="card-columns">
+     
+    <div class="card bg-success">
+      <div class="card-body text-center">
+        <h3> Find A Trade</h3>
+        <p class="card-text">Trades in your area</p>
+      </div>
+    </div>
+    <div class="card bg-warning">
+      <div class="card-body text-center">
+        <h3> Post A Job</h3>
+        <p class="card-text">Post your job free</p>
+      </div>
+    </div>
+    <div class="card bg-info">
+      <div class="card-body text-center">
+        <h3> Get A Quote</h3>
+        <p class="card-text">Get instant quotes </p>
+      </div>
+    </div>
+   
+  </div>
+</div>
 <!-- 
 <div class="container"> -->
 <div class="jumbotron">
@@ -341,10 +363,10 @@
 
 
   
- 
+<!--  
 <footer class="container">
   <p>&copy; Solutions provider2020</p>
-</footer>
+</footer> -->
 </body>
- 
+ <jsp:include page="../views/templates/footer.jsp" />
 </html> 

@@ -24,7 +24,7 @@ public class Job {
 	
 	@OneToOne
 	@JoinColumn(name="hirer_id")
-	private Hirers hirer;
+	private Hirer hirer;
 
 	public Job(Long job_id, String status) {
 		this.job_id = job_id;
@@ -48,11 +48,11 @@ public class Job {
 		Status = status;
 	}
 
-	public Hirers getHirer() {
+	public Hirer getHirer() {
 		return hirer;
 	}
 
-	public void setHirer(Hirers hirer) {
+	public void setHirer(Hirer hirer) {
 		this.hirer = hirer;
 	}
 

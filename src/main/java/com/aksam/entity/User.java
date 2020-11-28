@@ -41,28 +41,25 @@ public class User {
 	
 	
 	@OneToOne(mappedBy="user")
-	private Hirers hirer;
+	private Hirer hirer;
 
-	public Hirers getHirer() {
+	public Hirer getHirer() {
 		return hirer;
 	}
 
-	public void setHirer(Hirers hirer) {
+	public void setHirer(Hirer hirer) {
 		this.hirer = hirer;
 	}
 
 	
-	@OneToOne(mappedBy="user")
-	private Payments payment;
-
-
-	public Payments getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payments payment) {
-		this.payment = payment;
-	}
+	/*
+	 * @OneToOne(mappedBy="user") private Payments payment;
+	 * 
+	 * 
+	 * public Payments getPayment() { return payment; }
+	 * 
+	 * public void setPayment(Payments payment) { this.payment = payment; }
+	 */
 
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

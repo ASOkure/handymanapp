@@ -11,15 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table( name="hirer")
-public class Hirers {
+public class Hirer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "hirer_id")
 	private Long hirer_id;
 	
 	
-	public Hirers(Long hirer_id) {
+	public Hirer(Long hirer_id) {
 		
 		this.hirer_id = hirer_id;
 		

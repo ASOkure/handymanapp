@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.aksam.entity.Handyman;
-import com.aksam.entity.User;
+
 
 @Repository
-public class HandymanDaoImpl {
+public class HandymanDaoImpl implements HandymanDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -33,14 +33,14 @@ public class HandymanDaoImpl {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// create query and execute
-	Query q =  currentSession.createQuery("from Handyman h, Handyman.class");
+	Query q =  currentSession.createQuery("from Handyman", Handyman.class);
 	
 	        
-	List<Handyman>result = q.getResultList();
+	List<Handyman> handyman = q.getResultList();
 		
 
 		
-		return result;
+		return handyman;
 	}
 	
 	
@@ -58,5 +58,48 @@ public class HandymanDaoImpl {
 		return theHandyman;
 		   
 	}
+	
+	public void deleteHandyman(  int theid) {
+		//get the current hibernate session;
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		
+		//delete object with primary key
+		
+		Query theQuery =
+				currentSession.createQuery("delete from Handyman where id=:handymanId");
+		theQuery.setParameter("handymanId", theid);
+		
+		theQuery.executeUpdate();
+		
+	}
+
+	@Override
+	public Handyman getHandymanById(Long id) {
+		
+		// get current hibernate session;
+		
+		Session currentSession = sessionFactory.getCurrentSession();
+		// now retrive/read from database using the primary key or the id that is passed into this method
+		
+		Handyman handyman = currentSession.get(Handyman.class, id);
+		
+		
+		return handyman;
+	}
+
+	@Override
+	public void updateHandyman(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getHandymanByLocation(Handyman handyman, String state, String lga) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	
 }

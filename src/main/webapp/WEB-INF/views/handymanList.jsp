@@ -43,9 +43,15 @@
     
    <c:forEach var="handy"  items="${handymanlists}">
    
-     <!--  construct an "update" link with handyman id -->
+     <!--  construct an "edit" link with handyman id -->
    
      <c:url var="updateLink" value="/showFormForHandymanUpdate">
+      <c:param name="handymanId" value="${handy.handyman_id}" />
+      </c:url>
+      
+       <!--  construct an "delete" link with handyman id -->
+   
+     <c:url var="deleteLink" value="/delete">
       <c:param name="handymanId" value="${handy.handyman_id}" />
       </c:url>
        <tr>
@@ -59,7 +65,9 @@
         <td>${tempHandyman.businessType}</td> --%>
         
         <!--  display the update link -->
-      <td>  <a href="${updateLink}">Edit</a> </td>
+      <td>  <a href="${updateLink}">Edit</a> |
+     <a href="${deleteLink}" onclick="if(!(confirm('Are you sure you want to delete this handyman ?')))return false">Delete</a> 
+      </td>
       </tr>
       
     </c:forEach>

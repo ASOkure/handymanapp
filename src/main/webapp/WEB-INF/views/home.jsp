@@ -150,19 +150,20 @@
      
     <div class="card bg-success">
       <div class="card-body text-center">
-        <h3> Find A Trade</h3>
+       <a class="nav-link" href="<c:url value='/quote'/>"> <h3> Find A Trade</h3> </a> 
         <p class="card-text">Trades in your area</p>
       </div>
     </div>
     <div class="card bg-warning">
       <div class="card-body text-center">
-        <h3> Post A Job</h3>
+     
+        <a class="nav-link" href="<c:url value='/quote'/>"> <h3> Post A Job</h3> </a> 
         <p class="card-text">Post your job free</p>
       </div>
     </div>
     <div class="card bg-info">
       <div class="card-body text-center">
-        <h3> Get A Quote</h3>
+         <a class="nav-link" href="<c:url value='/quote'/>"> <h3> Get  A Quote</h3> </a> 
         <p class="card-text">Get instant quotes </p>
       </div>
     </div>

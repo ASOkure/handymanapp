@@ -59,7 +59,7 @@ public class HandymanDaoImpl implements HandymanDao {
 		   
 	}
 	
-	public void deleteHandyman(  int theid) {
+	public void deleteHandyman(  Long theid) {
 		//get the current hibernate session;
 		
 		Session currentSession = sessionFactory.getCurrentSession();

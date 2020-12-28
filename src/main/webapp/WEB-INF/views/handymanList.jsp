@@ -74,7 +74,10 @@
       
    
   </table>
-  
+  <p>
+<a href="${pageContext.request.contextPath}/">Home</a>
+
+</p>
   </div>
 </div>
 </body>

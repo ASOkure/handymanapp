@@ -11,7 +11,7 @@ public interface HandymanDao {
 	public Handyman getHandymanById( Long id);
 	public void updateHandyman(  int id);
 	public void getHandymanByLocation(Handyman handyman, String state, String lga);
-	public void deleteHandyman(  int theid);
+	public void deleteHandyman(  Long theid);
 	
 
 }

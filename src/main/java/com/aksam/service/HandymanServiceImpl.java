@@ -56,7 +56,7 @@ public class HandymanServiceImpl implements HandymanService {
 
 	@Override
 	@Transactional
-	public void deleteHandyman(int theid) {
+	public void deleteHandyman(Long theid) {
 		
 		handymanDao.deleteHandyman(theid);
 		

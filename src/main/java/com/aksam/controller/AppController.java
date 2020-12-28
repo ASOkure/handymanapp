@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.aksam.entity.Handyman;
+import com.aksam.entity.Hirer;
 import com.aksam.service.HandymanService;
+import com.aksam.service.HirerService;
 
 @Controller
 public class AppController {
@@ -20,6 +22,9 @@ public class AppController {
 	
 	@Autowired
 	HandymanService handymanService;
+	
+	@Autowired
+	HirerService hirerService;
 		
 	@RequestMapping("/")
 		public String home( ) {
@@ -41,6 +46,19 @@ public class AppController {
 		
 		return "handymanList";
 	}
+	
+	
+	@RequestMapping("/listhirer")
+	public String listHirer(Model theModel ) {
+		
+		List<Hirer> thehirerList = hirerService.getAllHirers();
+		
+		
+		theModel.addAttribute("hirerlists", thehirerList);
+		
+		return "hirerList";
+	}
+	
 	
 	@RequestMapping("/quote")
 	public String Quote( ) {
@@ -75,7 +93,7 @@ public class AppController {
 		
 		handymanService.saveHandyman(theHandyman);
 		// to do create handyman list
-		return "redirect:/handyman/list";
+		return "redirect:/listhandyman";
 		
 		
 	}
@@ -91,16 +109,16 @@ public class AppController {
 		return  "handymanSignUp";
 	}
 	
-	@RequestMapping("/deleteHandyman")
-	public String deleteHandyman(@RequestParam("handyman_id") int theId) {
+	@GetMapping(value="/delete")
+	public String deleteHandyman(@RequestParam("handymanId") Long theId) {
 		
 		//delete the customer
 		
 		handymanService.deleteHandyman(theId);
 		
-		return "redirect:/handyman/list";
-		
-	}
+		return "redirect:/listhandyman";
+		}
+	
 	@RequestMapping("/logout")
 	public String Logout( ) {
 		

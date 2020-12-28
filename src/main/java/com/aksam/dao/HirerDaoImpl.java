@@ -43,7 +43,7 @@ public class HirerDaoImpl implements HirerDao {
 	}
 
 	@Override
-	public Hirer findHirerById(int id) {
+	public Hirer getHirerById(Long id) {
 		
 		Session theCurrentSession = sessionFactory.getCurrentSession();
 		
@@ -64,14 +64,15 @@ public class HirerDaoImpl implements HirerDao {
 		
 	}
 
+	
 	@Override
-	public void getHirerByLocation(Handyman handyman, String state, String lga) {
+	public void getHirerByLocation(Hirer hirer, String state, String lga) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteHirer(int theid) {
+	public void deleteHirer(Long theid) {
 		
 		Session theCurrentSession = sessionFactory.getCurrentSession();
 		

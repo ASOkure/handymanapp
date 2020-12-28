@@ -8,10 +8,12 @@ import com.aksam.entity.Hirer;
 public interface HirerDao {
 	public void saveHirer( Hirer hirer);
 	public List<Hirer> getAllHires();
-	public Hirer findHirerById( int id);
+	//public Hirer findHirerById( Long id);
+	public Hirer getHirerById( Long id);
 	public void updateHirer(  int id);
-	public void getHirerByLocation(Handyman handyman, String state, String lga);
-	public void deleteHirer(  int theid);
+	public void getHirerByLocation(Hirer hirer, String state, String lga);
+	public void deleteHirer(Long theid);
+
 	
 
 }

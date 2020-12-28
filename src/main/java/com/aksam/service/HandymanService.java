@@ -19,7 +19,7 @@ public interface HandymanService {
 	
 	public void getHanymanByLocation(Handyman handyman, String state, String lga);
 	
-	public void deleteHandyman(  int theid);
+	public void deleteHandyman(  Long theid);
 	
 		
 	

@@ -1,0 +1,11 @@
+<html>
+
+    <body>
+        <h3>Dear ${handyman.firstName}  ${handman.lastName}, thank you for posting a job .</h3>
+
+        <div>
+            Your job id is : ${job.job_id}.
+        </div>
+        <span>Sent using FreeMarker Template</span>
+    </body>
+</html>

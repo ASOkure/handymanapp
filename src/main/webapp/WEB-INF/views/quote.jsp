@@ -176,11 +176,12 @@
 <p>Please give a description of the job you want doing including detail of any materials you need the tradesman to supply,
  the condition of any repair/replacement work, etc.</p><br>
  
-  <form action="/action_page.php">
+  <form action="redirectToLogin">
     <div class="form-group">
       <label for="comment">Job info:</label>
       <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
     </div>
+    <input type="hidden" name="from" value="${pageContext.request.requestURI}">
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 

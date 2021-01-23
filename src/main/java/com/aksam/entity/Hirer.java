@@ -25,9 +25,11 @@ public class Hirer {
 		
 	}
 	
-	@OneToOne
-	@JoinColumn(name= "User_id")
-	private User user;
+	/*
+	 * @OneToOne
+	 * 
+	 * @JoinColumn(name= "User_id") private User user;
+	 */
 	
 	@OneToOne(mappedBy="hirer")
 	private Job job;

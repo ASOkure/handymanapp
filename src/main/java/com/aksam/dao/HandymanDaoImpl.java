@@ -55,6 +55,9 @@ public class HandymanDaoImpl implements HandymanDao {
 		
 		Handyman theHandyman = currentSession.get(Handyman.class, id);
 		
+		               
+		               
+		
 		return theHandyman;
 		   
 	}

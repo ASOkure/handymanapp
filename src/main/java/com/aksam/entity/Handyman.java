@@ -77,22 +77,20 @@ public Handyman() {
 		this.businesstype = businesstype;
 		this.cost = cost;
 		this.status = status;
-		this.user = user;
+		//this.user = user;
 	}
    
 	
-	@OneToOne
-	@JoinColumn(name= "User_id")
-	private User user;
-	
-	
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	/*
+	 * @OneToOne
+	 * 
+	 * @JoinColumn(name= "User_id") private User user;
+	 * 
+	 * 
+	 * public User getUser() { return user; }
+	 * 
+	 * public void setUser(User user) { this.user = user; }
+	 */
 	
 	
 	public Long getHandyman_id() {
@@ -174,7 +172,7 @@ public Handyman() {
 		return "Handyman [handyman_id=" + handyman_id + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", password=" + password + ", bussinesAddress=" + businessAddress + ", state="
 				+ state + ", lga=" + lga + ", phoneNumber=" + phoneNumber + ", businesstype=" + businesstype + ", cost="
-				+ cost + ", status=" + status + ", user=" + user + "]";
+				+ cost + ", status=" + status + "]";
 	}
 	
 	

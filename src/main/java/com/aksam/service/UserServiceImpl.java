@@ -32,8 +32,9 @@ public class UserServiceImpl implements UserService {
 		@Autowired
 		private RoleDao roleDao;
 		
-		@Autowired
-		private BCryptPasswordEncoder passwordEncoder;
+		
+		  @Autowired private BCryptPasswordEncoder passwordEncoder;
+		 
 
 		@Override
 		@Transactional
@@ -48,13 +49,13 @@ public class UserServiceImpl implements UserService {
 			User user = new User();
 			 // assign user details to the user object
 			user.setUserName(applicationUser.getUserName());
-			user.setPassword(passwordEncoder.encode(applicationUser.getPassword()));
+			//user.setPassword(passwordEncoder.encode(applicationUser.getPassword()));
 			user.setFirstName(applicationUser.getFirstName());
 			user.setLastName(applicationUser.getLastName());
 			user.setEmail(applicationUser.getEmail());
 
 			// give user default role of "employee"
-			user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_HIRER")));
+			user.setRoles(Arrays.asList(roleDao.findRoleByName("ROLE_HANDYMAN")));
 
 			 // save user in the database
 			userDao.save(user);

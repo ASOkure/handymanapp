@@ -24,6 +24,7 @@
 		<springsecurity.version>5.3.1.RELEASE</springsecurity.version>
 		<hibernate.version>5.4.14.Final</hibernate.version>
 		<mysql.connector.version>5.1.47</mysql.connector.version>
+		
 		<c3po.version>0.9.5.4</c3po.version> 
     </properties>
  
@@ -58,6 +59,32 @@
  
  
         <!-- Servlet+JSP+JSTL -->
+        
+         <!-- All Mail related stuff + Much more-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- JavaMail-->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+        
+        
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
+        
  
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -160,7 +187,24 @@
 		    <artifactId>hibernate-validator</artifactId>
 		    <version>6.0.7.Final</version>
 		</dependency>
-		
+
+	<dependency>
+		<groupId>org.springframework.integration</groupId>
+		<artifactId>spring-integration-mail</artifactId>
+		<version>3.0.2.RELEASE</version>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+		<groupId>javax.activation</groupId>
+		<artifactId>activation</artifactId>
+		<version>1.1-rev-1</version>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>javax.mail</artifactId>
+    <version>1.4.7</version>
+</dependency>
 		      
     </dependencies>
  

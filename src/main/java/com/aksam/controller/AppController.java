@@ -23,8 +23,8 @@ public class AppController {
 	@Autowired
 	HandymanService handymanService;
 	
-	@Autowired
-	HirerService hirerService;
+	//@Autowired
+//	HirerService hirerService;
 		
 	@RequestMapping("/")
 		public String home( ) {
@@ -48,16 +48,16 @@ public class AppController {
 	}
 	
 	
-	@RequestMapping("/listhirer")
-	public String listHirer(Model theModel ) {
+//	@RequestMapping("/listhirer")
+//	public String listHirer(Model theModel ) {
 		
-		List<Hirer> thehirerList = hirerService.getAllHirers();
+	//	List<Hirer> thehirerList = hirerService.getAllHirers();
 		
 		
-		theModel.addAttribute("hirerlists", thehirerList);
+		//theModel.addAttribute("hirerlists", thehirerList);
 		
-		return "hirerList";
-	}
+		//return "hirerList";
+	//}
 	
 	
 	@RequestMapping("/quote")
@@ -68,6 +68,10 @@ public class AppController {
 	}
 
 
+	 @RequestMapping("/redirectToLogin")
+	    public String redirectToLogi() {
+	        return "redirect:fancy-login";
+	    }
 	
 	@RequestMapping("/tradeSignUp")
 	public String tradeSignUp(Model theModel ) {

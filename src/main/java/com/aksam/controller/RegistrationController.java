@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,13 +20,12 @@ import com.aksam.appuser.ApplicationUser;
 import com.aksam.entity.User;
 import com.aksam.service.UserService;
 
-
-
-  @Controller
- @RequestMapping("/register")
+@Controller
+@RequestMapping("/register")
 public class RegistrationController {
 	
-    @Autowired
+	
+	@Autowired
     private UserService userService;
 	
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -38,7 +38,7 @@ public class RegistrationController {
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
 	}	
 	
-	@RequestMapping("/showRegistrationForm")
+	@GetMapping("/showRegistrationForm")
 	public String showMyLoginPage(Model theModel) {
 		
 		theModel.addAttribute("applicationUser", new ApplicationUser());
@@ -63,7 +63,7 @@ public class RegistrationController {
 		// check the database if user already exists
         User existing = userService.findByUserName(userName);
         if (existing != null){
-        	theModel.addAttribute("crmUser", new ApplicationUser());
+        	theModel.addAttribute("applicationUser", new ApplicationUser());
 			theModel.addAttribute("registrationError", "User name already exists.");
 
 			logger.warning("User name already exists.");
@@ -77,3 +77,6 @@ public class RegistrationController {
         return "registration-confirmation";		
 	}
 }
+
+
+

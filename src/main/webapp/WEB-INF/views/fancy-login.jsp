@@ -38,7 +38,7 @@
 					<!-- Login Form -->
 					<form action="${pageContext.request.contextPath}/authenticateTheUser" 
 						  method="POST" class="form-horizontal">
-
+						<input type="hidden" name="from" value="${param.from}">  <!-- transfer after login to post a job page -->
 					    <!-- Place for messages: error, alert etc ... -->
 					    <div class="form-group">
 					        <div class="col-xs-15">

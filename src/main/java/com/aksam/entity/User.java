@@ -28,38 +28,7 @@ public class User {
 	@Column(name = "email")
 	private String email;
 	
-	@OneToOne(mappedBy="user")
-	private Handyman handyman;
-
-	public Handyman getHandyman() {
-		return handyman;
-	}
-
-	public void setHandyman(Handyman handyman) {
-		this.handyman = handyman;
-	}
 	
-	
-	@OneToOne(mappedBy="user")
-	private Hirer hirer;
-
-	public Hirer getHirer() {
-		return hirer;
-	}
-
-	public void setHirer(Hirer hirer) {
-		this.hirer = hirer;
-	}
-
-	
-	/*
-	 * @OneToOne(mappedBy="user") private Payments payment;
-	 * 
-	 * 
-	 * public Payments getPayment() { return payment; }
-	 * 
-	 * public void setPayment(Payments payment) { this.payment = payment; }
-	 */
 
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

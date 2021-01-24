@@ -47,15 +47,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.authorizeRequests()
 		        .antMatchers("/").permitAll()
-		        .antMatchers("/hirer").hasRole("HIRER")
-				.antMatchers("/handyman/**").hasRole("HANDYMAN")
+		        .antMatchers("/hirer").hasRole("HIRER")				.antMatchers("/handyman/**").hasRole("HANDYMAN")
 				.antMatchers("/admin/**").hasRole("ADMIN")
 				.and()
 				.formLogin()
 				.loginPage("/showMyLoginPage")
-				//.defaultSuccessUrl("/home.jsp")
 				.loginProcessingUrl("/authenticateTheUser")
-				
+				.successHandler(customAuthenticationSuccessHandler)
 				.permitAll()
 				.and()
 				.logout().permitAll()

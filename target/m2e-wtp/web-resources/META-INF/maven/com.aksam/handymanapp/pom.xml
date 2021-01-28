@@ -136,7 +136,13 @@
 		    <version>${springsecurity.version}</version>
 		</dependency>	
 		
+        <!-- @postconstruct -->
         
+        <dependency>
+    <groupId>javax.annotation</groupId>
+    <artifactId>javax.annotation-api</artifactId>
+    <version>1.3.2</version>
+</dependency>
         
           <!-- Spring Transactions -->
         <dependency>

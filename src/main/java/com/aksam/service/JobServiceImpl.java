@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.aksam.dao.JobDao;
+import com.aksam.entity.Handyman;
 import com.aksam.entity.Job;
 
 @Service
@@ -22,4 +23,16 @@ public class JobServiceImpl implements JobService {
 		return jobDao.getAllJobpost();
 	}
 
-}
+	@Override
+	@Transactional
+	public void saveJob(Job theJob) {
+		
+		
+		jobDao.saveJob(theJob);
+		
+			
+		}
+		
+	}
+
+

@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.aksam.entity.Handyman;
 import com.aksam.entity.Hirer;
+import com.aksam.entity.Job;
 import com.aksam.service.HandymanService;
 import com.aksam.service.HirerService;
+import com.aksam.service.JobService;
 
 @Controller
 public class AppController {
@@ -23,6 +25,8 @@ public class AppController {
 	@Autowired
 	HandymanService handymanService;
 	
+	@Autowired
+	JobService jobService;
 	//@Autowired
 //	HirerService hirerService;
 		
@@ -69,7 +73,7 @@ public class AppController {
 
 
 	 @RequestMapping("/redirectToLogin")
-	    public String redirectToLogi() {
+	    public String redirectToLogin() {
 	        return "redirect:fancy-login";
 	    }
 	
@@ -129,5 +133,18 @@ public class AppController {
 		
 		return "logout";
 	}
+	
+	@RequestMapping( value="/processPostJob", method = RequestMethod.POST)
+	public String processPostJob(@ModelAttribute("job") Job theJob) {
+		
+		//save the handyman using our service
+		jobService.saveJob(theJob);
+	//	handymanService.saveHandyman(theHandyman);
+		// to do create handyman list
+		return "redirect:/listhandyman";
+		
+		
+	}
+
 
 	}

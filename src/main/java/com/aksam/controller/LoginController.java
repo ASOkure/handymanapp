@@ -16,6 +16,15 @@ public class LoginController {
 		
 	}
 	
+	
+	
+	@RequestMapping("/from")
+	public String from( ) {
+		
+		
+		return "memberquote";
+	}
+	
 	// add request mapping for /access-denied
 	
 	@GetMapping("/access-denied")

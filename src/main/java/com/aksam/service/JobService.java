@@ -10,4 +10,6 @@ public interface JobService {
 	
 	public List<Job>  getAllJobpost();
 
+	public void saveJob(Job theJob);
+
 }

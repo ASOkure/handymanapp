@@ -7,4 +7,6 @@ import com.aksam.entity.Job;
 public interface JobDao {
 
 	public List<Job> getAllJobpost();
+
+	public void saveJob(Job theJob);
 }

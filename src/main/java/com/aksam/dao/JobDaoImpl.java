@@ -35,6 +35,19 @@ public class JobDaoImpl implements JobDao {
 
 					return jobs;
 				}
+
+
+	@Override
+	public void saveJob(Job theJob) {
+		
+		
+		// create currentSession
+				Session currentSession = sessionFactory.getCurrentSession();
+				
+				// use session saveorUpdate method to save
+				 currentSession.saveOrUpdate(theJob);
+		
+	}
 		
 	}
 

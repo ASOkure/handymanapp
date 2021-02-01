@@ -89,6 +89,7 @@ public class HibernateConfiguration {
 				  Properties props = new Properties();
 			  
 			  props.setProperty("hibernate.dialect", env.getProperty("hibernate.dialect"));
+			//  props.setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 			  props.setProperty("hibernate.show_sql",
 			  env.getProperty("hibernate.show_sql"));
 			  

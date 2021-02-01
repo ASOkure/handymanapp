@@ -30,18 +30,76 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.aksam.appuser.ApplicationUser;
 import com.aksam.service.UserService;
 
+
+
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
 	
-	
+
 	/*
 	 * @Autowired private UserService userService;
 	 */
-	
 	@Autowired
-	private UserDetailsManager userDetailsManager;
-	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private UserService userService;
+	
+    private Logger logger = Logger.getLogger(getClass().getName());
+    
+	@InitBinder
+	public void initBinder(WebDataBinder dataBinder) {
+		
+		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+		
+		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+	}	
+	
+	@GetMapping("/showRegistrationForm")
+	public String showMyLoginPage(Model theModel) {
+		
+		theModel.addAttribute("applicationUser", new ApplicationUser());
+		
+		return "registration-form";
+	}
+
+	@PostMapping("/processRegistrationForm")
+	public String processRegistrationForm(
+				@Valid @ModelAttribute("applicationUser") ApplicationUser theApplicationUser, 
+				BindingResult theBindingResult, 
+				Model theModel) {
+		
+		String userName = theApplicationUser.getUserName();
+		logger.info("Processing registration form for: " + userName);
+		
+		// form validation
+		 if (theBindingResult.hasErrors()){
+			 return "registration-form";
+	        }
+
+		// check the database if user already exists
+        com.aksam.entity.User existing = userService.findByUserName(userName);
+        
+        
+         
+        if (existing != null){
+        	theModel.addAttribute("applicationUser", new ApplicationUser());
+			theModel.addAttribute("registrationError", "User name already exists.");
+
+			logger.warning("User name already exists.");
+        	return "registration-form";
+        }
+     // create user account        						
+        userService.save(theApplicationUser);
+        
+        logger.info("Successfully created user: " + userName);
+        
+        return "registration-confirmation";		
+	}
+}
+
+	
+	
+	
+	/*private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
 	
     private Logger logger = Logger.getLogger(getClass().getName());
@@ -169,7 +227,7 @@ public class RegistrationController {
 	}
 
 			
-			
+*/			
 			
 			
 			/*

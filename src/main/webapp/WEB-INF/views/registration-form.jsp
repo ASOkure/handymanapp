@@ -107,9 +107,9 @@
 						</div>
 						
 						<!-- Roles -->
-						<div style="margin-bottom: 25px" class="input-group">							
+						<%-- <div style="margin-bottom: 25px" class="input-group">							
 							<form:select path="formRole" items="${roles}" class="form-control" />
-						</div>
+						</div> --%>
 
 						<!-- Register Button -->
 						<div style="margin-top: 10px" class="form-group">						

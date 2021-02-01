@@ -12,6 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 
 import com.aksam.service.UserService;
 
@@ -20,56 +22,50 @@ import com.aksam.service.UserService;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 // add a reference to our security data source
-	 @Autowired
-	 private UserService userService;
-	
-	 
-	 @Autowired
-	 private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
-	 
-	 
-		/*
-		 * @Autowired private DataSource securityDataSource;
-		 * 
-		 * @Override protected void configure(AuthenticationManagerBuilder auth) throws
-		 * Exception {auth.jdbcAuthentication().dataSource(securityDataSource); }
-		 */
 
-	 @Override
-	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	        auth.authenticationProvider(authenticationProvider());
-	    }
-	 
-	 
-	 
+	@Autowired
+	private UserService userService;
+
+	/*
+	 * @Autowired private DataSource securityDataSource;
+	 */
+
+	@Autowired
+	private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
+
+	/*
+	 * @Autowired private DataSource securityDataSource;
+	 * 
+	 * @Override protected void configure(AuthenticationManagerBuilder auth) throws
+	 * Exception {auth.jdbcAuthentication().dataSource(securityDataSource); }
+	 */
+
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+		auth.authenticationProvider(authenticationProvider());
+	}
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.authorizeRequests()
-		        .antMatchers("/").permitAll()
-		        .antMatchers("/hirer").hasRole("HIRER")				.antMatchers("/handyman/**").hasRole("HANDYMAN")
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				.and()
-				.formLogin()
-				.loginPage("/showMyLoginPage")
-				.loginProcessingUrl("/authenticateTheUser")
-				.successHandler(customAuthenticationSuccessHandler)
-				.permitAll()
-				.and()
-				.logout().permitAll()
-				.and()
+		http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/hirer").hasRole("HIRER")
+				.antMatchers("/handyman/**").hasRole("HANDYMAN").antMatchers("/admin/**").hasRole("ADMIN").and()
+				.formLogin().loginPage("/showMyLoginPage").loginProcessingUrl("/authenticateTheUser")
+				.successHandler(customAuthenticationSuccessHandler).permitAll().and().logout().permitAll().and()
 				.exceptionHandling().accessDeniedPage("/access-denied");
 
 	}
 
-	//beans
-		//bcrypt bean definition
-		@Bean
-		public BCryptPasswordEncoder passwordEncoder() {
-			return new BCryptPasswordEncoder();
-		}
+	// beans
+	// bcrypt bean definition
+	@Bean
+	public BCryptPasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
 
-		//authenticationProvider bean definition
+	
+	//authenticationProvider bean definition
 		@Bean
 		public DaoAuthenticationProvider authenticationProvider() {
 			DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
@@ -80,4 +76,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	
 	
+	
+	
+	/*
+	 * @Bean public UserDetailsManager userDetailsManager() {
+	 * 
+	 * JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager();
+	 * 
+	 * jdbcUserDetailsManager.setDataSource(securityDataSource);
+	 * 
+	 * return jdbcUserDetailsManager; }
+	 */
+
 }

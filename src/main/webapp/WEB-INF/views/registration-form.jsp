@@ -114,6 +114,7 @@
 						<!-- Register Button -->
 						<div style="margin-top: 10px" class="form-group">						
 							<div class="col-sm-6 controls">
+							<input type="hidden" name="from" value="${param.from}">
 								<button type="submit" class="btn btn-primary">Register</button>
 							</div>
 						</div>

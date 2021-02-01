@@ -25,6 +25,15 @@ public class LoginController {
 		
 	}
 	
+	@RequestMapping("/redirectToLoginPage")
+	public String redirectToLoginPage() {
+		
+		
+		return "fancy-login";
+		
+	}
+	
+	
 }
 
 

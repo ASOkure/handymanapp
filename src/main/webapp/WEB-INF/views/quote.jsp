@@ -176,7 +176,7 @@
 <p>Please give a description of the job you want doing including detail of any materials you need the tradesman to supply,
  the condition of any repair/replacement work, etc.</p><br>
  
-  <form action="redirectToLogin">
+  <form action="redirectToLoginPage">
     <div class="form-group">
       <label for="comment">Job info:</label>
       <textarea class="form-control" rows="5" id="comment" name="text"></textarea>

@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.aksam.appuser.ApplicationUser;
 import com.aksam.service.UserService;
@@ -82,6 +83,7 @@ public class RegistrationController {
          
         if (existing != null){
         	theModel.addAttribute("applicationUser", new ApplicationUser());
+			
 			theModel.addAttribute("registrationError", "User name already exists.");
 
 			logger.warning("User name already exists.");

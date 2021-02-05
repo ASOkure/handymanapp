@@ -1,5 +1,8 @@
 package com.aksam.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -41,6 +44,18 @@ public class UserDaoImpl implements UserDao{
 
 			// create the user ... finally LOL
 			currentSession.saveOrUpdate(theUser);
+		}
+
+		@Override
+		public List<User> getAllUsers() {
+		
+			Session currentSession = sessionFactory.getCurrentSession();
+			
+			   Query q = currentSession.createQuery("from User", User.class);
+			
+			   
+			   List<User>  userslist = q.getResultList();
+			   return  userslist;
 		}
 
 	}

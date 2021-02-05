@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.mail.MessagingException;
+import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,13 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
+
 import com.aksam.entity.Handyman;
 import com.aksam.entity.Job;
+import com.aksam.entity.User;
 import com.aksam.service.HandymanService;
 import com.aksam.service.JobService;
+import com.aksam.service.UserService;
 
 import freemarker.template.Configuration;
 
@@ -32,7 +36,7 @@ public class MailServiceImpl implements MailService{
 	JavaMailSender mailSender;
 	
 	@Autowired
-	HandymanService handymanService;
+	UserService userService;
 	
 	@Autowired
 	JobService jobService;
@@ -43,9 +47,9 @@ public class MailServiceImpl implements MailService{
 	@Override
 	public void sendEmail ( ) {
 		
-	
+		User appuser = new User();
 		
-		MimeMessagePreparator preparator = getMessagePreparator();
+		MimeMessagePreparator preparator = getMessagePreparator(appuser);
 		
 		try {
             mailSender.send(preparator);
@@ -58,154 +62,76 @@ public class MailServiceImpl implements MailService{
 	}
 
 
+	public List<String> getUsersEmail() {
 
-	
-		private MimeMessagePreparator getMessagePreparator(){
+		List<String> emailList = new ArrayList();
 		
+	
+		List<User> users = userService.getAllUsers();
+
+		for (User u : users) {
+			
+			String email = u.getEmail();
+
+			emailList.add(email);
+
+		}
+		
+		return emailList;
+
+	}
+
+	private MimeMessagePreparator getMessagePreparator(User user) {
+
 		MimeMessagePreparator preparator = new MimeMessagePreparator() {
 
 			public void prepare(MimeMessage mimeMessage) throws Exception {
-            	
+
 				MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
-				
-			//	 Handyman handyman  =  new Handyman();
-				 List<Handyman> handyman = new ArrayList<Handyman>();
-				 
-				 List<String> handymanEmail = new ArrayList<String>();
-				 
-				 handyman.addAll(handymanService.getAllHandyman());
-				 
-				 Iterator<Handyman> iterator = handyman.iterator();
-				 
-				 while (iterator.hasNext()) {
 
-				Handyman handymaniter = iterator.next();
-				 
-				handymanEmail.add(handymaniter.getEmail().toLowerCase());
-				 }
-				 
-				 
-				 handymanEmail.forEach(email -> {
-					try {
-						helper.setTo(email);
-					} catch (MessagingException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				});
-							
-						 
+				List<String> emails = getUsersEmail();
 				
+				InternetAddress[] address = new InternetAddress[emails.size()];
 				
-				 helper.setSubject("Your job on Handymanapp");
-	               	helper.setFrom("akan.okure@gmail.com");
-	              // 	helper.setTo(handymanService.);
-	               	
-	               	
-	             	Map<String, Object> model = new HashMap<String, Object>();
-   	             
-	               	 model.put("handyman", handyman);
-	                
-	            	String text = geFreeMarkerTemplateContent(model);
-	                System.out.println("Template content : "+text);
+				for( int i = 0; i < emails.size();  i++) {
+					
+                 address[i] = new InternetAddress(emails.get(i));
+				}
+				helper.setSubject("Your job on Solutions Provider App");
+				helper.setFrom("akan.okure@gmail.com");
+		         helper.setTo(address);
+				
+				/*
+				 * for (String toEmail : emails)
+				 * 
+				 * helper.setTo(toEmail);
+				 */
 
-	                // use the true flag to indicate you need a multipart message
-	            	helper.setText(text, true);
+				Map<String, Object> model = new HashMap<String, Object>();
+
+				model.put("user", user);
+
+				String text = geFreeMarkerTemplateContent(model);
+				System.out.println("Template content : " + text);
+
+				// use the true flag to indicate you need a multipart message
+				helper.setText(text, true);
 
 			}
 		};
 		return preparator;
-		}
-	               	
-            	
-        		//	List<Handyman> handyman = new ArrayList<Handyman>();
-
-        			//List<Job> jobs = new ArrayList<Job>();
-
-        		//	List<String> handymanEmail = new ArrayList<String>();
-
-        		//	handyman.addAll(handymanService.getAllHandyman());
-
-        		//	jobs.addAll(jobService.getAllJobpost());
-
-        			// iterate over handyman list and get handyman id, and email.
-
-        		//	Iterator<Handyman> iterator = handyman.iterator();
-
-        		//	while (iterator.hasNext()) {
-
-        			//	Handyman handymaniter = iterator.next();
-
-        			//	Iterator<Job> iteratorjob = jobs.iterator();
-
-        			//	while (iteratorjob.hasNext()) {
-
-        			//		Job jobiter = iteratorjob.next();
-
-        				//	if (handymaniter.getBusinesstype().equals(jobiter.getJob_type())
-
-        					//		&& handymaniter.getBusinessAddress().equals(jobiter.getJob_lga()))
-
-        						// handymaniter.getEmail().toLowerCase();
-
-        					//	handymanEmail.add(handymaniter.getEmail().toLowerCase());
-
-        				//	handymanEmail.forEach(email -> mailService.sendEmail(email));
-        					
-        				// 	helper.setSubject("Your job on Handymanapp");
-        	             //  	helper.setFrom("solutionproviders062020@gmail.com");
-        	               	
-        	               	
-        	               	//helper.setTo(handymanEmail.forEach(email -> aa));
-        	               	
-        	               	//  handymanEmail.forEach(email -> {
-							//	try {
-							//		helper.setTo(email);
-							//	} catch (MessagingException e) {
-									// TODO Auto-generated catch block
-								//	e.printStackTrace();
-							//	}
-							//}
-        	       
-        	               	/*Map<String, Object> model = new HashMap<String, Object>();
-        	             
-        	               	 model.put("handyman", handyman);
-        	                
-        	            	String text = geFreeMarkerTemplateContent(model);
-        	                System.out.println("Template content : "+text);
-
-        	                // use the true flag to indicate you need a multipart message
-        	            	helper.setText(text, true);*/
-
-        	            	//Additionally, let's add a resource as an attachment as well.
-        	            //	helper.addAttachment("cutie.png", new ClassPathResource("linux-icon.png"));
-
-        	  //          }
-        	//        };
-		//};
-        	       
-        		
-        							
-
-        				
-
-				
-        		
-            	
-   
-
-public String geFreeMarkerTemplateContent(Map<String, Object> model){
-	StringBuffer content = new StringBuffer();
-	try{
-     content.append(FreeMarkerTemplateUtils.processTemplateIntoString( 
-    		 freemarkerConfiguration.getTemplate("fm_mailTemplate.txt"),model));
-     return content.toString();
-	}catch(Exception e){
-		System.out.println("Exception occured while processing fmtemplate:"+e.getMessage());
 	}
-      return "";
-}
-		
-		}
-		
 
+	public String geFreeMarkerTemplateContent(Map<String, Object> model) {
+		StringBuffer content = new StringBuffer();
+		try {
+			content.append(FreeMarkerTemplateUtils
+					.processTemplateIntoString(freemarkerConfiguration.getTemplate("fm_mailTemplate.txt"), model));
+			return content.toString();
+		} catch (Exception e) {
+			System.out.println("Exception occured while processing fmtemplate:" + e.getMessage());
+		}
+		return "";
+	}
+
+}

@@ -24,7 +24,8 @@ public class HandymanDaoImpl implements HandymanDao {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// use session saveorUpdate method to save
-		 currentSession.saveOrUpdate(handyman);
+		// currentSession.saveOrUpdate(handyman);
+		 currentSession.save(handyman);
 		      
 }
 	

@@ -21,7 +21,7 @@ import com.aksam.service.UserService;
 
 
 
-  @Controller
+ @Controller
  @RequestMapping("/register")
 public class RegistrationController {
 	

@@ -82,7 +82,7 @@ public Handyman() {
    
 	
 	@OneToOne
-	@JoinColumn(name= "User_id")
+	@JoinColumn(name= "id")
 	private User user;
 	
 	

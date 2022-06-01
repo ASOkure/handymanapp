@@ -86,6 +86,7 @@ button:hover {
 <div class="container">
 </br>
     <p>Please fill in this form to create an account.</p>
+    
 
 <form:form  action="saveHandyman" modelAttribute="handyman" method="POST">
 <!--  need to associate this data with  handyman id for update/edit handyman by adding a hiden form field -->

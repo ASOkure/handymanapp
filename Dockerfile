@@ -1,7 +1,4 @@
-FROM openjdk:8-jdk-alpine
-
-ADD target/handymanapp.jar handymanapp.jar
-
+FROM tomcat:8.0.20-jre8
+ADD  /target/handymanapp.war /usr/local/tomcat/webapps
+CMD ["catalina.sh", "run"]
 EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "/handymanapp.jar"]

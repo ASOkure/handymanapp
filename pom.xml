@@ -7,11 +7,11 @@
   <groupId>com.aksam</groupId>
   <artifactId>handymanapp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>handymanapp Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>http://www.asoglobal.com</url>
 
 
 
@@ -190,7 +190,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
         </plugin>
-        <plugin>
+         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
           <configuration>
@@ -198,7 +198,14 @@
                         <warName>handymanapp</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
-        </plugin>
+        </plugin> 
+        <!-- <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.2</version>
+                <configuration>
+                    <useDefaultManifestFile>true</useDefaultManifestFile>
+                </configuration>
+            </plugin> -->
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.5.2</version>
